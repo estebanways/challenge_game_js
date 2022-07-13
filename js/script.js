@@ -125,5 +125,4 @@ class Game {
   }
 }
 
-//const newGame = new Game();
 const newGame = new Game(document.querySelectorAll('.img'), document.querySelectorAll('button'), document.querySelector('.results > .you-win'), document.querySelector('.results > .draw'), document.querySelector('.results > .pc-win'), new Stats(0, 0, 0));
