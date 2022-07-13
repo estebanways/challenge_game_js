@@ -7,48 +7,50 @@
   <meta name="author" content="Alvaro Herrera" />
   <meta name="" content="" />
   <meta name="robots" content="index" />
-  <title>Cats fight</title>
+  <title>Cat Fights</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="shortcut icon" href="./assets/larnu_favicon.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=greek-ext" rel="stylesheet">
 </head>
 <body>
   <div id="root">
-      <h1> 😾️ Cats fight 😾️</h1>
+      <h1>😾️ Cat Fights 😾️</h1>
       <section class="user">
         <div id="user1">
           <img src="" id="user-one">
-          <h2> Player 1 😾️</h2>
+          <h2> Player 1: YOU 😾️</h2>
         </div>
+        <div class="ending"></div>
         <div id="user2">
           <img src="" id="user-two">
-          <h2> Player 2 😾️</h2>
+          <h2> Player 2: CPU 🤖️</h2>
+        </div>
+      </section>
+      <section>
+        <div class="results">
+          <span class="you-win">WINS: 0</span>
+          <span class="draw"></span>
+          <span class="pc-win">WINS: 0</span>
+        </div>
+      </section>
+      <section><h2>Attacks Cards</h2></section>
+      <section class="choose">
+        <div class="options">
+          <div data-option="emerald" class="img">
+            <img class="gemstones" src="assets/emerald.png">
+          </div>
+          <div data-option="ruby" class="img">
+            <img class="gemstones" src="assets/ruby.png">
+          </div>
+          <div data-option="shapphire" class="img">
+            <img class="gemstones" src="assets/sapphire.png">
+          </div>
+          <button data-option="emerald">DEAL</button>
+          <button data-option="ruby">DEAL</button>
+          <button data-option="shapphire">DEAL</button>
         </div>
       </section>
 
-    <section class="choose">
-      <div class="options">
-        <div data-option="emerald" class="img">
-          <img class="gemstones" src="assets/emerald.png">
-        </div>
-        <div data-option="ruby" class="img">
-          <img class="gemstones" src="assets/ruby.png">
-        </div>
-        <div data-option="shapphire" class="img">
-          <img class="gemstones" src="assets/sapphire.png">
-        </div>
-        <button data-option="emerald">emerald</button>
-        <button data-option="ruby">Ruby</button>
-        <button data-option="shapphire">Sapphire</button>
-      </div>
-    </section>
-    <section>
-    <div class="results">
-      <span class="you-win">Player: 0</span>
-      <span class="draw"></span>
-      <span class="pc-win">Computer: 0</span>
-    </div>
-    </section>
   </div>
 
   <script src="./js/script.js"></script>

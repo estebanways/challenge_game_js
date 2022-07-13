@@ -11,17 +11,18 @@ html {
 
 body {
   height: 100vh;
-  background-color: rgb(248, 115, 7);
+  #background-color: rgb(248, 115, 7);
+  background-color: red;
+  background-image: linear-gradient(red, #f06d06);
 }
-
 
 .user {
   display:flex;
   flex-direction: row;
   align-items:center;
   justify-content: center;
-  gap: 400px;
-  padding-bottom: 100px;
+  gap: 50px;
+  padding-bottom: 50px;
 }
 
 .results {
@@ -83,8 +84,14 @@ img {
 }
 
 img#user-one, img#user-two {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
+  --b: 10px; /* control the size */
+  padding: var(--b);
+  border: calc(2*var(--b)) solid #0000;
+  outline: 1px solid #000;
+  outline-offset: calc(-1*var(--b));
+  background: conic-gradient(from 90deg at 1px 1px,#0000 90deg,#000 0);
 }
 
 .gemstones {
@@ -121,7 +128,7 @@ button[data-option]:hover {
 }
 
 .draw-color {
-  outline: 1px solid red;
+  background-color: rgb(248, 115, 7);
 }
 
 @keyframes draw {
