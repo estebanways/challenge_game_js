@@ -56,19 +56,30 @@ class Stats {
     switch (result) {
       case "win":
         this.status.wins++;
+        console.log("This: ", this);
+        if (this.status.wins == 5) {
+          console.log("YOU WON!");
+          this.status.wins = 0;
+          this.status.loses = 0;
+        }
         break;
       case "draw":
         this.status.draws++;
         break;
       case "lose":
         this.status.loses++;
+        if (this.status.loses == 5) {
+          console.log("GAME OVER!");
+          this.status.loses = 0;
+          this.status.wins = 0;
+        }
         break;
     }
   }
 }
 
 class Game {
-  constructor() {
+  constructor(optionsImg, optionsBtns, optionsBtnsListener, youWins, draw, PcWins, stats, render) {
     this.optionsImg = document.querySelectorAll('.img');
     this.optionsBtns = document.querySelectorAll('button');
     this.optionsBtns.forEach(option => option.addEventListener('click', this.startGame.bind(this)))
@@ -101,6 +112,7 @@ class Game {
     [...this.optionsImg].find(choice => choice.dataset.option === yourChoice).classList.add('player-choice');
       [...this.optionsImg].find(choice => choice.dataset.option === PcChoice).classList.add('pc-choice');
     }
+    
 
     this.stats.refreshStats(Result.whoWin(yourChoice, PcChoice));
 
@@ -108,12 +120,12 @@ class Game {
   }
 
   render(stats) {
-    this.youWins.textContent = `Player: ${stats.wins}`;
-    this.PcWins.textContent = `PC: ${stats.loses}`;
+    this.youWins.textContent = `WINS: ${stats.wins}`;
+    this.PcWins.textContent = `WINS: ${stats.loses}`;
   }
 }
 
-const newGame = new Game();
-
+//const newGame = new Game();
+const newGame = new Game(document.querySelectorAll('.img'), document.querySelectorAll('button'), `this.optionsBtns.forEach(option => option.addEventListener('click', this.startGame.bind(this)))`, document.querySelector('.results > .you-win'), document.querySelector('.results > .draw'), document.querySelector('.results > .pc-win'));
 
 
