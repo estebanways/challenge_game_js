@@ -79,16 +79,16 @@ class Stats {
 }
 
 class Game {
-  constructor(optionsImg, optionsBtns, optionsBtnsListener, youWins, draw, PcWins, stats, render) {
-    this.optionsImg = document.querySelectorAll('.img');
-    this.optionsBtns = document.querySelectorAll('button');
+  constructor(optionsImg, optionsBtns, youWins, draw, PcWins, stats) {
+    this.optionsImg = optionsImg;
+    this.optionsBtns = optionsBtns;
     this.optionsBtns.forEach(option => option.addEventListener('click', this.startGame.bind(this)))
 
-    this.youWins = document.querySelector('.results > .you-win');
-    this.draw = document.querySelector('.results > .draw');
-    this.PcWins = document.querySelector('.results > .pc-win');
+    this.youWins = youWins;
+    this.draw = draw;
+    this.PcWins = PcWins;
 
-    this.stats = new Stats(0, 0, 0);
+    this.stats = stats;
 
     this.render.call(this, this.stats.getStats());
   }
@@ -126,6 +126,4 @@ class Game {
 }
 
 //const newGame = new Game();
-const newGame = new Game(document.querySelectorAll('.img'), document.querySelectorAll('button'), `this.optionsBtns.forEach(option => option.addEventListener('click', this.startGame.bind(this)))`, document.querySelector('.results > .you-win'), document.querySelector('.results > .draw'), document.querySelector('.results > .pc-win'));
-
-
+const newGame = new Game(document.querySelectorAll('.img'), document.querySelectorAll('button'), document.querySelector('.results > .you-win'), document.querySelector('.results > .draw'), document.querySelector('.results > .pc-win'), new Stats(0, 0, 0));
