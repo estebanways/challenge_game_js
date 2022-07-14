@@ -20,9 +20,16 @@ fetch(URL)
 
 class Result {
   static whoWin(yourChoice, PCchoice) {
-    if (yourChoice === "emerald" && PCchoice === "shapphire" || yourChoice === "shapphire" && PCchoice === "ruby" || yourChoice === "ruby" && PCchoice === "emerald") return "win";
-    else if (yourChoice === "shapphire" && PCchoice === "emerald" || yourChoice === "ruby" && PCchoice === "shapphire" || yourChoice === "emerald" && PCchoice === "ruby") return "lose";
-    else return "draw";
+    switch (true) {
+      case (yourChoice === "emerald" && PCchoice === "shapphire" || yourChoice === "shapphire" && PCchoice === "ruby" || yourChoice === "ruby" && PCchoice === "emerald") :
+        return "win";
+      case (yourChoice === "shapphire" && PCchoice === "emerald" || yourChoice === "ruby" && PCchoice === "shapphire" || yourChoice === "emerald" && PCchoice === "ruby") :
+        return "lose";
+      case (yourChoice === PCchoice) :
+        return "draw";
+      default:
+        console.log("Something went wrong.");
+    }
   }
 }
 
